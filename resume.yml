@@ -1,9 +1,9 @@
 basics:
-  name: Alicia Sykes
-  email: hello@aliciasykes.com
-  url: https://github.com/lissy93
+  name: Yevhen Mionchynskyy
+  email: inbox@rider.pp.ua
+  url: https://www.linkedin.com/in/yevhenmionchynskyy
   location:
-    address: London, UK
+    address: Lviv, UA
 personal-statement: |
   I help organisations turn complex technical challenges into simple,
   scalable solutions that make a real difference for users and teams.
@@ -14,15 +14,15 @@ personal-statement: |
   impact at both company and community level.
 extra-links:
   work_history:
-    text: See all previous roles at linkedin.com/in/aliciasykes
-    link: https://linkedin.com/in/aliciasykes
+    text: See all previous roles at linkedin.com/in/yevhenmionchynskyy
+    link: https://www.linkedin.com/in/yevhenmionchynskyy/
   projects:
     text: See example projects built with each technology at apps.aliciasykes.com
     link: https://apps.aliciasykes.com/
 education:
-- institution: Oxford Brookes
-  area: Computer Science
-  studyType: BSc
+- institution: Lviv National University
+  area: Applied Mathematics
+  studyType: MSc
   startDate: ''
   endDate: ''
   score: 1st Class Honors. Winner of Best Final Year Project Prize. President of Computing Society.
