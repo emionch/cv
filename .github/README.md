@@ -1,4 +1,4 @@
-<h1 align="center">Alicia Sykes - CV</h1>
+<h1 align="center">Yevhen Mionchynskyy - CV</h1>
 <p align="center">
 <a href="https://github.com/Lissy93/cv"><img src="https://i.ibb.co/G4vGDwtD/cv-logo.png?" width="48" /><br /></a>
 <i>This repo contains the source for my personal CV</i>
@@ -207,4 +207,5 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
               |     /          |     /     ~-.     ~- _
               |_____|          |_____|         ~ - . _ _~_-_
 -->
+
 
