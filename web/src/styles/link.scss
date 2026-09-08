@@ -65,11 +65,13 @@ a:not(.no-underline):not(.is-active) {
 	padding: 0.25rem 0;
 	cursor: pointer;
 	border-radius: var(--button-radius);
-	margin: 0.25rem 0.5rem;
+	// Sits on its own line, aligned right. It used to float, which took it out of
+	// the flow and let it overlap the text it belongs to
+	width: fit-content;
+	margin: 0.5rem 0.5rem 0.5rem auto;
 	text-align: center;
 	font-weight: bold;
 	font-size: 0.85rem;
-	float: right;
 	min-width: 14rem;
 	box-shadow:
 		rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
@@ -82,6 +84,7 @@ a:not(.no-underline):not(.is-active) {
 	}
 }
 
+// Keeps a button in the reading flow instead of pushing it to the right edge
 .no-float {
-	float: none;
+	margin-left: 0.5rem;
 }
