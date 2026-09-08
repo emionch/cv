@@ -5,6 +5,17 @@ import additionalData from '../../../static/data/additional-data.json';
 
 export const prerender = true;
 
+const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+// 2016-03 -> Mar 2016; anything else (like "Present") is passed through
+const formatDate = (date: string) => {
+	if (!/^\d{4}-\d{2}$/.test(date)) {
+		return date;
+	}
+	const [year, month] = date.split('-');
+	return `${months[parseInt(month) - 1]} ${year}`;
+};
+
 const formatForCompare = (str: string) => {
 	if (!str) {
 		return '';
@@ -43,7 +54,7 @@ const mergeJobData = (cvData: any[], websiteData: any[]) => {
 
 		return {
 			company: cvJob.name,
-			datesWorked: `${cvJob.startDate} - ${cvJob.endDate}`,
+			datesWorked: `${formatDate(cvJob.startDate)} - ${formatDate(cvJob.endDate)}`,
 			...cvJob
 		};
 	});

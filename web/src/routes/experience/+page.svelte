@@ -88,7 +88,7 @@
 		.dates {
 			font-size: 0.8rem;
 			opacity: 0.8;
-			margin: -1rem 0 0 2.5rem;
+			margin: 0.15rem 0 0.5rem 0;
 		}
 		h3 {
 			font-size: 1rem;
