@@ -63,7 +63,7 @@
 	<h1>Skills</h1>
 	<p>
 		Below is a breakdown of the technologies, methodologies and tools I've worked with extensively
-		across 20+ years in IT infrastructure, operations and performance testing.
+		across 25+ years in IT infrastructure, operations and performance testing.
 	</p>
 
 	{#each skills as category}

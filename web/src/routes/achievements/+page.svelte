@@ -16,7 +16,7 @@
 	let certificates = $derived(data.certificates);
 
 	const highlights = [
-		'20+ years in IT, from system administration through to infrastructure and service leadership',
+		'25+ years in IT, from system administration through to infrastructure and service leadership',
 		'Built the Performance Testing Service at SoftServe from scratch — offering, roadmap, training program and team',
 		'80+ performance testing projects delivered for clients',
 		'Led teams of up to 32 direct reports, across infrastructure, operations, InfoSec and development',

@@ -8,7 +8,7 @@
 	];
 
 	const intro = [
-		`I'm an infrastructure and performance testing leader based in Lviv, Ukraine, with 20+ years
+		`I'm an infrastructure and performance testing leader based in Lviv, Ukraine, with 25+ years
 		of experience across IT operations, infrastructure architecture, and the processes that keep
 		software organisations running.`,
 
