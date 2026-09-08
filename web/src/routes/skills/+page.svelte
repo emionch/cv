@@ -2,8 +2,6 @@
 	import '../../styles/resume-main.scss';
 	import '../../styles/other-pages.scss';
 
-	import Language from '../../components/Language.svelte';
-
 	interface Skill {
 		name: string;
 		keywords: string[];
@@ -72,7 +70,7 @@
 		<h3>{category.name}</h3>
 		<ul class="keywords">
 			{#each category.keywords as keyword}
-				<li><Language language={keyword} small /></li>
+				<li class="chip">{keyword}</li>
 			{/each}
 		</ul>
 	{/each}
@@ -137,7 +135,15 @@
 	.keywords {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 0.25rem 0.75rem;
+		gap: 0.4rem;
+		.chip {
+			font-size: 0.85rem;
+			padding: 0.1rem 0.5rem;
+			border: 1px solid var(--primary-transparent);
+			border-radius: var(--button-radius, 0.5rem);
+			background: var(--primary-transparent);
+			color: var(--text-color);
+		}
 	}
 	.plain li {
 		opacity: 0.9;

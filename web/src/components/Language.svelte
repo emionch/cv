@@ -168,12 +168,14 @@
 		title={`Built with ${langAttributes.name}`}
 		style={`--lang-color: #${langAttributes.color};`}
 	>
-		<img
-			height="16"
-			width="16"
-			alt={langAttributes.name}
-			src="https://cdn.simpleicons.org/{langAttributes.icon}/{langAttributes.color}"
-		/>
+		{#if langAttributes.icon}
+			<img
+				height="16"
+				width="16"
+				alt={langAttributes.name}
+				src="https://cdn.simpleicons.org/{langAttributes.icon}/{langAttributes.color}"
+			/>
+		{/if}
 		{langAttributes.name}
 	</div>
 {/if}
