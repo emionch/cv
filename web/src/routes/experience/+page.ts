@@ -3,6 +3,18 @@ import type { PageLoad } from './$types';
 import resumeYaml from '../../../../resume.yml?raw';
 import additionalData from '../../../static/data/additional-data.json';
 
+// The logos live outside the web app (assets/logos) so the LaTeX build uses the
+// very same files. Vite fingerprints them, so a changed logo busts its own cache.
+const logoUrls = import.meta.glob('../../../../assets/logos/*.png', {
+	eager: true,
+	query: '?url',
+	import: 'default'
+}) as Record<string, string>;
+
+const logoBySlug: Record<string, string> = Object.fromEntries(
+	Object.entries(logoUrls).map(([path, url]) => [path.split('/').pop()!.replace('.png', ''), url])
+);
+
 export const prerender = true;
 
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -58,7 +70,7 @@ const mergeJobData = (cvData: any[], websiteData: any[]) => {
 			...cvJob,
 			company: cvJob.name,
 			companyUrl: cvJob.url,
-			companyLogo: cvJob.logo ? `/logos/${cvJob.logo}.png` : undefined,
+			companyLogo: cvJob.logo ? logoBySlug[cvJob.logo] : undefined,
 			datesWorked: `${formatDate(cvJob.startDate)} - ${formatDate(cvJob.endDate)}`
 		};
 	});

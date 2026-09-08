@@ -95,7 +95,7 @@
 {%- for job in work %}
     \cventry
     { {{ job.position | latex_escape }} }
-    { {% if job.logo %}\raisebox{-0.2em}{\includegraphics[height=1.1em]{../web/static/logos/{{ job.logo }}.png}}\hspace{0.35em}{% endif %}{{ job.name | latex_escape }} }
+    { {% if job.logo %}\raisebox{-0.2em}{\includegraphics[height=1.1em]{../assets/logos/{{ job.logo }}.png}}\hspace{0.35em}{% endif %}{{ job.name | latex_escape }} }
     {}
     { {{ job.startDate | latex_escape | format_date }} – {{ job.endDate | latex_escape | format_date if job.endDate else 'Present' | latex_escape }} }
     {\begin{cvitems}

@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { base } from '$app/paths';
 	import Language from '../../components/Language.svelte';
 
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -18,11 +17,7 @@
 		<h2>
 			{#if job.companyUrl && job.companyLogo}
 				<a href={job.companyUrl} target="_blank" rel="nofollow" class="no-underline">
-					<img
-						class="company-logo"
-						src={job.companyLogo.startsWith('http') ? job.companyLogo : base + job.companyLogo}
-						alt={job.company}
-					/>
+					<img class="company-logo" src={job.companyLogo} alt={job.company} />
 				</a>
 			{/if}
 			<span>{job.position}</span>
