@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import '../styles/resume-main.scss';
 
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -49,7 +50,7 @@
 	<!-- Personal statement -->
 	<section class="personal-statement">
 		<p>{data['personal-statement']}</p>
-		<a href="/intro" class="small-btn no-underline">
+		<a href="{base}/intro" class="small-btn no-underline">
 			<i class="nav-icon fa-solid fa-address-card"></i>
 			View Full Bio
 			<i class="fa-solid fa-arrow-right"></i>
@@ -73,7 +74,7 @@
 					</ul>
 				</div>
 			{/each}
-			<a href="/experience" class="small-btn no-underline">
+			<a href="{base}/experience" class="small-btn no-underline">
 				<i class="nav-icon fa-solid fa-briefcase"></i>
 				View All Experience
 				<i class="fa-solid fa-arrow-right"></i>
@@ -104,7 +105,7 @@
 				</li>
 			{/each}
 		</ul>
-		<a href="/skills" class="small-btn no-underline">
+		<a href="{base}/skills" class="small-btn no-underline">
 			<i class="nav-icon fa-solid fa-code"></i>
 			View All Skills
 			<i class="fa-solid fa-arrow-right"></i>
@@ -123,7 +124,7 @@
 				</li>
 			{/each}
 		</ul>
-		<a href="/achievements" class="small-btn no-underline">
+		<a href="{base}/achievements" class="small-btn no-underline">
 			<i class="nav-icon fa-solid fa-star"></i>
 			View All Achievements
 			<i class="fa-solid fa-arrow-right"></i>

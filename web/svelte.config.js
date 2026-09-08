@@ -9,12 +9,18 @@ const config = {
 	preprocess: vitePreprocess(),
 
 	kit: {
+		// Served from a sub-path on GitHub Pages project sites (e.g. /cv), root elsewhere
+		paths: {
+			base: process.env.BASE_PATH || ''
+		},
 		// Use static adapter for GitHub Pages deployment, auto adapter otherwise
 		adapter: process.env.GITHUB_PAGES
 			? adapterStatic({
 					pages: 'build',
 					assets: 'build',
-					fallback: 'index.html',
+					// 404.html so GitHub Pages serves the SPA fallback for deep links,
+					// and the prerendered index.html survives
+					fallback: '404.html',
 					precompress: false,
 					strict: false
 				})

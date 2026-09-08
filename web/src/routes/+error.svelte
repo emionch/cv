@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { page } from '$app/state';
 </script>
 
@@ -16,7 +17,7 @@
 			An unexpected error occurred. Please try again later.
 		{/if}
 	</p>
-	<a href="/" class="no-underline big-btn">
+	<a href="{base}/" class="no-underline big-btn">
 		<i class="fa-solid fa-arrow-left"></i>
 		Back to CV
 	</a>

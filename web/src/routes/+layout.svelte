@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { browser } from '$app/environment';
 	import { onMount, type Snippet } from 'svelte';
 	import { page } from '$app/state';
@@ -58,7 +59,8 @@
 		}
 	});
 
-	let path = $derived(page.url.pathname);
+	// Path relative to the deploy base, so route comparisons work under a sub-path too
+	let path = $derived(page.url.pathname.slice(base.length) || '/');
 
 	const socials = [
 		{
@@ -86,12 +88,12 @@
 <div class="app">
 	<aside>
 		<div class="aside-inner">
-			<a href="/" class="no-underline"><h1>CV: Yevhen Mionchynskyy</h1></a>
+			<a href="{base}/" class="no-underline"><h1>CV: Yevhen Mionchynskyy</h1></a>
 			<h2 class="job-title">Performance Testing Cluster Lead</h2>
 			<img
 				class="profile-picture"
 				width="300"
-				src="/profile-picture.jpg"
+				src="{base}/profile-picture.jpg"
 				alt="Yevhen Mionchynskyy"
 			/>
 			<ul class="socials">
@@ -107,7 +109,7 @@
 				<ul>
 					{#each navLinks as { name, url, icon }}
 						<li class:is-active={path === url}>
-							<a class="no-underline" href={url}>
+							<a class="no-underline" href="{base}{url}">
 								<i class="nav-icon fa-solid {icon}"></i>
 								{name}
 							</a>
@@ -115,7 +117,7 @@
 					{/each}
 					{#if path !== '/'}
 						<li>
-							<a href="/" class="no-underline">
+							<a href="{base}/" class="no-underline">
 								<i class="nav-icon fa-solid fa-home"></i>
 								Home
 							</a>
@@ -123,7 +125,7 @@
 					{/if}
 				</ul>
 			</nav>
-			<a href="/download" class="no-underline">
+			<a href="{base}/download" class="no-underline">
 				<button class="download-btn">
 					<i class="fa-solid fa-file-arrow-down"></i>
 					Download CV
@@ -134,7 +136,7 @@
 			</a>
 		</div>
 		<div class="aside-bottom">
-			<a class="get-in-touch" href="/contact">
+			<a class="get-in-touch" href="{base}/contact">
 				<i class="fa-solid fa-paper-plane"></i>
 				Send me a Message
 			</a>
@@ -163,12 +165,12 @@
 						<strong>As of {startDateFormatted}, I am actively seeking new opportunities!</strong>
 						<br />
 						Read my
-						<a href="/intro">full bio</a>
+						<a href="{base}/intro">full bio</a>
 						to learn more about me, and if you think I could be a good fit for your team, please
-						<a href="/contact">get in touch</a>
+						<a href="{base}/contact">get in touch</a>
 						.
 					</p>
-					<a href="/ideal-role" class="small-btn no-underline">
+					<a href="{base}/ideal-role" class="small-btn no-underline">
 						<i class="fa-solid fa-bullseye-arrow"></i>
 						View Ideal Role
 						<i class="fa-solid fa-arrow-right"></i>

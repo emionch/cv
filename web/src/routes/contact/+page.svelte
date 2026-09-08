@@ -1,4 +1,5 @@
 <script>
+	import { base } from '$app/paths';
 	let emailVisible = $state(false);
 	const revealEmail = () => {
 		emailVisible = true;
@@ -35,15 +36,15 @@
 <div class="some-text">
 	<p>
 		You can learn more about me on the
-		<a href="/intro">intro</a>
+		<a href="{base}/intro">intro</a>
 		page, or browse the
-		<a href="/skills">skills</a>
+		<a href="{base}/skills">skills</a>
 		,
-		<a href="/experience">experience</a>
+		<a href="{base}/experience">experience</a>
 		and
-		<a href="/achievements">achievements</a>
+		<a href="{base}/achievements">achievements</a>
 		pages to see if I align with what you're looking for. A PDF version of my CV can be downloaded
-		<a href="/download">here</a>
+		<a href="{base}/download">here</a>
 		.
 	</p>
 	<p>
@@ -53,7 +54,7 @@
 	</p>
 	<p>
 		To see if I'd be a good fit for your team, you can view my
-		<a href="/ideal-role">ideal role</a>
+		<a href="{base}/ideal-role">ideal role</a>
 		.
 	</p>
 	<p>

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
 
@@ -9,7 +10,7 @@
 		if (browser) {
 			try {
 				// Try to download the PDF directly from the website
-				const pdfUrl = '/yevhen-mionchynskyy-cv.pdf';
+				const pdfUrl = `${base}/yevhen-mionchynskyy-cv.pdf`;
 
 				// Check if the PDF exists
 				const response = await fetch(pdfUrl, { method: 'HEAD' });
@@ -67,7 +68,7 @@
 					Visit the releases page directly
 				</a>
 			</li>
-			<li><a href="/">Return to the CV website</a></li>
+			<li><a href="{base}/">Return to the CV website</a></li>
 		</ul>
 	</div>
 {/if}

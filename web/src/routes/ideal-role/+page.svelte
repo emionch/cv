@@ -1,4 +1,5 @@
 <script>
+	import { base } from '$app/paths';
 	const navLinks = [
 		{ name: 'Intro', url: '/intro', icon: 'fa-address-card' },
 		{ name: 'Experience', url: '/experience', icon: 'fa-briefcase' },
@@ -72,22 +73,22 @@
 <h2>Why me?</h2>
 <p>
 	Take a look at my
-	<a href="/achievements">achievements</a>
+	<a href="{base}/achievements">achievements</a>
 	for what I've delivered, or my
-	<a href="/intro">intro</a>
+	<a href="{base}/intro">intro</a>
 	to learn more about how I work.
 </p>
 
 <h2>Get in Touch</h2>
 <p>
 	Does this sound good to you? If so, I'd love to hear from you! So please do
-	<a href="/contact">get in touch</a>
+	<a href="{base}/contact">get in touch</a>
 	.
 </p>
 
 <div class="other-pages">
 	{#each navLinks as { name, url, icon }}
-		<a href={url} class="big-btn no-underline">
+		<a href="{base}{url}" class="big-btn no-underline">
 			<i class="fa-solid {icon}"></i>
 			{name}
 		</a>

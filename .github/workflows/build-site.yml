@@ -115,6 +115,7 @@ jobs:
       - name: Build website
         env:
           GITHUB_PAGES: true
+          BASE_PATH: /cv
         run: |
           cd web
           npm run build
@@ -144,6 +145,8 @@ jobs:
   deploy:
     name: Deploy to Website Branch
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     needs: [build-cv, build-website]
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && needs.build-website.result == 'success'
     
@@ -175,8 +178,7 @@ jobs:
       - name: Deploy to website branch
         uses: peaceiris/actions-gh-pages@v4
         with:
-          personal_token: ${{ secrets.BOT_TOKEN }}
-          external_repository: ${{ github.repository }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: website
           publish_dir: ./website/
           user_name: 'github-actions[bot]'
