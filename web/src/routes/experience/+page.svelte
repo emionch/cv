@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import Language from '../../components/Language.svelte';
 
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -17,7 +18,11 @@
 		<h2>
 			{#if job.companyUrl && job.companyLogo}
 				<a href={job.companyUrl} target="_blank" rel="nofollow" class="no-underline">
-					<img width="128" src={job.companyLogo} alt={job.company} />
+					<img
+						class="company-logo"
+						src={job.companyLogo.startsWith('http') ? job.companyLogo : base + job.companyLogo}
+						alt={job.company}
+					/>
 				</a>
 			{/if}
 			<span>{job.position}</span>
@@ -73,13 +78,17 @@
 		h2 {
 			font-size: 1.2rem;
 			display: flex;
-			align-items: flex-start;
+			align-items: center;
 			gap: 0.5rem;
 			margin: 1rem 0 0 0;
+			// Logos vary from square app icons to wide wordmarks, so pin the
+			// height and let the width follow the artwork
 			img {
-				width: 2rem;
-				background: var(--text-color-dim);
-				border-radius: 50%;
+				height: 1.4rem;
+				width: auto;
+				max-width: 5.5rem;
+				object-fit: contain;
+				border-radius: 3px;
 			}
 		}
 		p {

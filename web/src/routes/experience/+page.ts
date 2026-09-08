@@ -43,7 +43,8 @@ const mergeJobData = (cvData: any[], websiteData: any[]) => {
 				position: cvJob.position,
 				startDate: cvJob.startDate,
 				endDate: cvJob.endDate,
-				datesWorked: matchingJob.datesWorked,
+				// resume.yml is the source of truth for dates: several roles can share one company
+				datesWorked: `${formatDate(cvJob.startDate)} - ${formatDate(cvJob.endDate)}`,
 				responsibilities: matchingJob.responsibilities,
 				projectType: matchingJob.projectType,
 				projects: matchingJob.projects,

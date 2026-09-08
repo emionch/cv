@@ -12,5 +12,26 @@
 		"intro": "Infrastructure & performance testing leader",
 		"picture": "/profile-picture.jpg"
 	},
-	"workExperience": []
+	"workExperience": [
+		{
+			"company": "SoftServe",
+			"companyUrl": "https://www.softserveinc.com/",
+			"companyLogo": "/logos/softserve.png"
+		},
+		{
+			"company": "ELEKS",
+			"companyUrl": "https://eleks.com/",
+			"companyLogo": "/logos/eleks.png"
+		},
+		{
+			"company": "Kasta",
+			"companyUrl": "https://kasta.ua/",
+			"companyLogo": "/logos/kasta.png"
+		},
+		{
+			"company": "Lviv Polytechnic National University",
+			"companyUrl": "https://lpnu.ua/",
+			"companyLogo": "/logos/lviv-polytechnic.png"
+		}
+	]
 }
