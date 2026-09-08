@@ -33,7 +33,13 @@
 		Lviv Polytechnic National University.`,
 
 		`I hold an MSc in Applied Mathematics and Informatics from Ivan Franko National University of
-		Lviv, along with certifications from Cisco (CCNA, CCNP), VMware (VCP) and Microsoft (MCP).`
+		Lviv, along with certifications from Cisco (CCNA, CCNP), VMware (VCP) and Microsoft (MCP).`,
+
+		`In my spare time I'm usually in my homelab — self-hosting services, wiring up home
+		automation, and occasionally breaking something at midnight just to understand how it works.
+		Twenty-five years in, I still like keeping my own hands on the infrastructure. And away from
+		the keyboard, I travel as much as I can, ideally toward water: yachting is my favourite way
+		to be completely unreachable for a few days.`
 	];
 </script>
 
