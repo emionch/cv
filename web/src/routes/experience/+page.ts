@@ -53,10 +53,13 @@ const mergeJobData = (cvData: any[], websiteData: any[]) => {
 			};
 		}
 
+		// Company URL and logo come from resume.yml, keeping it the single source of truth
 		return {
+			...cvJob,
 			company: cvJob.name,
-			datesWorked: `${formatDate(cvJob.startDate)} - ${formatDate(cvJob.endDate)}`,
-			...cvJob
+			companyUrl: cvJob.url,
+			companyLogo: cvJob.logo ? `/logos/${cvJob.logo}.png` : undefined,
+			datesWorked: `${formatDate(cvJob.startDate)} - ${formatDate(cvJob.endDate)}`
 		};
 	});
 
