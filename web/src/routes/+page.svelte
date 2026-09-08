@@ -32,7 +32,7 @@
 </script>
 
 <svelte:head>
-	<title>Alicia Sykes | CV | Home</title>
+	<title>Yevhen Mionchynskyy | CV | Home</title>
 </svelte:head>
 
 <div class="resume">
@@ -112,20 +112,13 @@
 	</section>
 
 	<section class="achievements">
-		<h2>Achievements</h2>
+		<h2>Certificates</h2>
 		<ul>
-			{#each data.achievements || [] as achievement}
+			{#each data.certificates || [] as certificate}
 				<li>
-					{achievement.text}
-					{#if achievement.source}
-						<a
-							href={achievement.source}
-							title={makeUrlretty(achievement.source)}
-							target="_blank"
-							rel="nofollow"
-						>
-							<i class="achievement-link fa-solid fa-link"></i>
-						</a>
+					{certificate.name}
+					{#if certificate.date}
+						<i>({certificate.date})</i>
 					{/if}
 				</li>
 			{/each}

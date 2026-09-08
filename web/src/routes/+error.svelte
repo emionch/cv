@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>Alicia Sykes | CV | {page.status}</title>
+	<title>Yevhen Mionchynskyy | CV | {page.status}</title>
 </svelte:head>
 
 <div class="error-page">

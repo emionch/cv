@@ -112,6 +112,8 @@ def render_template(template_path: str, resume_data: dict) -> str:
         awards=resume_data.get('awards', []),
         achievements=resume_data.get('achievements', []),
         projects=resume_data.get('projects', []),
+        certificates=resume_data.get('certificates', []),
+        languages=resume_data.get('languages', []),
         extra_links=resume_data.get('extra-links', {}),
         compilation_timestamp=pdf_timestamp
     )

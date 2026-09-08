@@ -3,97 +3,101 @@
 	import '../../styles/other-pages.scss';
 
 	import Language from '../../components/Language.svelte';
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	let { data }: { data: Record<string, any> } = $props();
 
-	let techStack = $derived(data.techStack);
+	interface Skill {
+		name: string;
+		keywords: string[];
+	}
+	interface Certificate {
+		name: string;
+		date?: string;
+		issuer?: string;
+	}
+	interface Lang {
+		language: string;
+		fluency?: string;
+	}
+
+	let { data }: { data: { skills: Skill[]; certificates: Certificate[]; languages: Lang[] } } =
+		$props();
+
+	let skills = $derived(data.skills);
+	let certificates = $derived(data.certificates);
+	let languages = $derived(data.languages);
 
 	const softSkills = [
 		{
-			skill: 'Problem Solving',
-			desc: 'Proven track record of resolving complex technical challenges across diverse industries, delivering scalable and maintainable solutions.'
+			skill: 'Team Leadership',
+			desc: 'Built and led teams of up to 32 direct reports across infrastructure, operations and performance testing, from hiring and appraisals through to day-to-day management.'
 		},
 		{
-			skill: 'Visionary Leadership',
-			desc: 'Led teams of up to 40 engineers, driving long-term strategy while ensuring alignment with business goals and technical vision.'
+			skill: 'Service Ownership',
+			desc: 'Took the Performance Testing Service at SoftServe from a blank sheet to a service offering, roadmap, training program and 80+ delivered client projects.'
 		},
 		{
-			skill: 'Cross-functional Collaboration',
-			desc: 'Collaborated closely with product managers, designers, and backend teams to ensure seamless integration and project success.'
+			skill: 'Budgeting & Cost Control',
+			desc: 'Managed CAPEX/OPEX budgeting and drove efficiency improvements through consolidation — including VoIP that cut international telephony costs by 10-100x.'
 		},
 		{
-			skill: 'Agile Mindset & Adaptability',
-			desc: 'Successfully led and contributed to agile development processes, adapting to changing requirements and delivering iterative improvements.'
+			skill: 'Process Design',
+			desc: 'Implemented ITIL-based IT processes, standard operating procedures and corporate tooling (Jira, Confluence, TestLink) across several organisations.'
 		},
 		{
-			skill: 'Technical Mentorship',
-			desc: 'Mentored junior and mid-level engineers, leading upskilling initiatives and fostering growth within development teams.'
+			skill: 'Infrastructure Architecture',
+			desc: 'Designed and delivered datacenter, network and storage platforms at scale: MPLS over DMVPN, 3,000+ Ethernet ports, enterprise storage and virtualization farms.'
 		},
 		{
-			skill: 'Data-driven Decision Making',
-			desc: 'Consistently used analytics and data to inform technical decisions, ensuring solutions are backed by measurable insights.'
+			skill: 'Vendor & Client Relationships',
+			desc: 'Prepared proposals and drove solution deployment in client environments, and managed relationships with internet, SIP and collocation providers.'
 		},
 		{
-			skill: 'Innovation Catalyst',
-			desc: 'Spearheaded the development of cutting-edge solutions, winning over 10 international hackathons and driving forward technical innovation.'
-		},
-		{
-			skill: 'Stakeholder Influence',
-			desc: 'Built strong relationships with key stakeholders, ensuring project buy-in and alignment with both business and technical objectives.'
-		},
-		{
-			skill: 'Enterprise Architecture Thinking',
-			desc: 'Applied enterprise-level architecture principles to design scalable, maintainable systems, ensuring long-term viability.'
-		},
-		{
-			skill: 'Change Management',
-			desc: 'Successfully led teams through major technical transformations, minimizing disruption while optimizing for future growth.'
-		},
-		{
-			skill: 'Customer Focus',
-			desc: 'Designed and delivered customer-centric solutions, always prioritizing user experience and real-world impact.'
+			skill: 'Mentorship & Training',
+			desc: 'Developed training programs from scratch, grew teams from initial hires to established departments, and lectured at Lviv Polytechnic National University.'
 		}
 	];
 </script>
 
 <svelte:head>
-	<title>Alicia Sykes | CV | Skills</title>
+	<title>Yevhen Mionchynskyy | CV | Skills</title>
 </svelte:head>
 
 <section class="skills-page">
 	<h1>Skills</h1>
 	<p>
-		Below is a list of technologies that I've worked extensively with, along with links to projects
-		I've build with each. I enjoy staying up-to-date with the latest technologies, so that I'm in
-		the best position to use the optimum tech stack for any given project.
+		Below is a breakdown of the technologies, methodologies and tools I've worked with extensively
+		across 20+ years in IT infrastructure, operations and performance testing.
 	</p>
 
-	{#each Object.keys(techStack) as technologyArea}
-		<h3>{technologyArea}</h3>
-		<ul>
-			{#each techStack[technologyArea] as technology}
-				<li>
-					<b><Language language={technology.language} /></b>
-					<br />
-					<details class="projects-collapsable">
-						<summary class="project-list-title">
-							Sample Projects ({technology.projects.length})
-						</summary>
-						<ul>
-							{#each technology.projects as project}
-								<li>
-									<i class="fa-brands fa-github"></i>
-									<a href="https://github.com/lissy93/{project}" target="_blank" rel="nofollow">
-										{project}
-									</a>
-								</li>
-							{/each}
-						</ul>
-					</details>
-				</li>
+	{#each skills as category}
+		<h3>{category.name}</h3>
+		<ul class="keywords">
+			{#each category.keywords as keyword}
+				<li><Language language={keyword} small /></li>
 			{/each}
 		</ul>
 	{/each}
+
+	{#if certificates.length}
+		<h3>Certifications</h3>
+		<ul class="plain">
+			{#each certificates as cert}
+				<li>
+					{cert.name}{#if cert.issuer}
+						&mdash; {cert.issuer}{/if}{#if cert.date}
+						({cert.date}){/if}
+				</li>
+			{/each}
+		</ul>
+	{/if}
+
+	{#if languages.length}
+		<h3>Languages</h3>
+		<ul class="plain">
+			{#each languages as lang}
+				<li>{lang.language} &mdash; {lang.fluency}</li>
+			{/each}
+		</ul>
+	{/if}
 
 	<h3>Soft Skills</h3>
 	<ul class="soft-skills">
@@ -108,13 +112,8 @@
 
 	<div class="note">
 		<p>
-			<b>Note</b>: The technology list is not exhaustive, as it doesn't include some technologies
-			I've used professionally at work, or for private clients.
-			<br />
-			<br />
-			For a full-list of programming languages and frameworks I've worked extensively with, as well as
-			links to code written in each, please reference
-			<a href="https://apps.aliciasykes.com">apps.aliciasykes.com</a>.
+			<b>Note</b>: The list is not exhaustive — it doesn't include everything used on individual
+			client projects.
 			<br />
 			<br />
 			For the soft skills, I can provide references, or put you in touch with previous colleagues who
@@ -133,31 +132,15 @@
 		li {
 			margin: 0.1rem 0;
 			font-size: 0.95rem;
-			.projects-collapsable {
-				margin-left: 2rem;
-				opacity: 0.8;
-				font-size: 0.8rem;
-				ul {
-					margin-bottom: 0.5rem;
-				}
-				.project-list-title {
-					cursor: pointer;
-				}
-				a {
-					color: var(--text-color);
-					text-transform: capitalize;
-					&:hover {
-						opacity: 1;
-					}
-					&:not(:last-child) {
-						margin-right: 0.25rem;
-						&::after {
-							content: ', ';
-						}
-					}
-				}
-			}
 		}
+	}
+	.keywords {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.25rem 0.75rem;
+	}
+	.plain li {
+		opacity: 0.9;
 	}
 	.soft-skills {
 		list-style: none;
@@ -192,12 +175,10 @@
 		border-radius: 4px;
 		background: #0000000a;
 		b,
-		p,
-		a {
+		p {
 			font-size: 0.8rem;
 		}
-		b,
-		a {
+		b {
 			font-weight: 500;
 		}
 	}

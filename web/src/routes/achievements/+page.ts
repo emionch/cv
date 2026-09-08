@@ -8,8 +8,7 @@ export const load: PageLoad = () => {
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	const resume = (yaml.load(resumeYaml) as any) || {};
 	return {
-		skills: resume.skills || [],
-		certificates: resume.certificates || [],
-		languages: resume.languages || []
+		awards: resume.awards || [],
+		certificates: resume.certificates || []
 	};
 };

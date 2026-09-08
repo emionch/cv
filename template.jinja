@@ -1,7 +1,7 @@
 %!TEX TS-program = xelatex
 %!TEX encoding = UTF-8 Unicode
 % {{ basics.name | latex_escape }} CV - Generated from YAML data
-% Source: https://github.com/Lissy93/cv
+% Source: https://github.com/emionch/cv
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     Configuration
@@ -49,7 +49,7 @@
     pdftitle   = {CV: {{ basics.name | latex_escape }}},
     pdfauthor  = {{ "{" }}{{ basics.name | latex_escape }}{{ "}" }},
     pdfsubject = {Curriculum Vitae},
-    pdfkeywords= {principal engineer, software engineering, CV, resume, {{ basics.name | latex_escape }}},
+    pdfkeywords= {performance testing, IT infrastructure, CV, resume, {{ basics.name | latex_escape }}},
     pdfcreator = {LaTeX with XeTeX},
     pdfproducer = {XeTeX},
     pdflang = {en-GB},
@@ -118,7 +118,7 @@
     { {{ edu.institution | latex_escape }} }
     {}
     {}
-    {Grade: {{ edu.score | latex_escape }}}
+    {{ '{' }}{% if edu.score %}Grade: {{ edu.score | latex_escape }}{% endif %}{{ '}' }}
 {%- endfor %}
 \end{cventries}
 {% endif %}
@@ -167,6 +167,33 @@
 {% endif %}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Certificates
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{% if certificates %}
+\cvsection{Certificates}
+\vspace{0.5mm}
+\begin{cvachievements}
+\setlength{\itemsep}{0mm}
+{%- for cert in certificates %}
+  \item { {{ cert.name | latex_escape }}{% if cert.date %} ({{ cert.date | latex_escape }}){% endif %}{% if cert.url %} \href{ {{ cert.url | latex_escape }} }{\scriptsize\color{lightgray}\faLink}{% endif %} }
+{%- endfor %}
+\end{cvachievements}
+{% endif %}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Languages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{% if languages %}
+\cvsection{Languages}
+\vspace{0.5mm}
+\begin{cvskills}
+{%- for lang in languages %}
+  \cvskill{ {{ lang.language | latex_escape }} }{ {{ lang.fluency | latex_escape }} }
+{%- endfor %}
+\end{cvskills}
+{% endif %}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     Projects
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 {% if projects %}
@@ -191,9 +218,9 @@
 \begin{center}
     \tiny\color{lightgray}
     Resume built with LaTeX, view source at
-    \href{https://github.com/lissy93/cv}{ github.com/lissy93/cv }.
+    \href{https://github.com/emionch/cv}{ github.com/emionch/cv }.
     Licensed under MIT (C)
-    \href{https://aliciasykes.com}{ {{ basics.name | latex_escape }} } {\the\year}
+    {{ basics.name | latex_escape }} {\the\year}
 \end{center}
 \ 
 \end{document}

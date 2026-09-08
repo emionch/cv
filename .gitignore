@@ -32,7 +32,7 @@ node_modules/
 out/*
 
 # Do not ignore specific files in out directory
-!out/Alicia-Sykes-CV.pdf
+!out/Yevhen-Mionchynskyy-CV.pdf
 
 # Other ignored files and directories
 resume.aux
@@ -60,3 +60,6 @@ Thumbs.db
 *.backup
 *.old
 *.swp
+
+# Personal source documents (LinkedIn export, old CV, photo)
+docs/

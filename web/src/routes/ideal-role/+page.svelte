@@ -7,49 +7,39 @@
 	];
 
 	const intro = [
-		`I'm looking for a role where I can take on exciting challenges, and lead teams
-    to build top-notch customer-focused products.`,
-		`Quality and coding standards are super
-    important to me, and I love helping others level up their skills so we can
-    create something awesome together, which will bring joy to our customers.`,
-		`I'm passionate about building a strong,
-    supportive developer community with things like guilds, lunch & learns,
-    coding challenges, and learning pathways.`,
-		`Ultimately, I want to make sure all our developers are happy,
-    and have what they need to succeed and build products that customers will truly love.`
+		`I'm looking for a role where I can lead infrastructure, operations or performance testing
+		teams, and be accountable for services that the business genuinely relies on.`,
+		`Process quality, cost efficiency and reliability matter to me, and I enjoy building the
+		structures — roadmaps, training, standard procedures — that let a team deliver consistently.`,
+		`I like being close enough to the technology to make architectural calls myself, while
+		growing the engineers around me so the team outlasts any one person.`,
+		`Ultimately, I want the systems we run to be reliable and cost-effective, and the people
+		running them to have what they need to succeed.`
 	];
 
 	const requirements = [
-		{ lbl: 'Location', desc: 'London-based, or a commutable distance from Central London' },
-		{ lbl: 'Contract Type', desc: 'Permanent, and ideally full-time' },
-		{
-			lbl: 'Workspace',
-			desc: "While remote working can be great, I do love coming into the office, as I think it's important for team building and collaboration"
-		},
+		{ lbl: 'Location', desc: 'Lviv, Ukraine — remote or hybrid also works well' },
 		{
 			lbl: 'Seniority',
-			desc: 'Engineering Manager or Principal Engineer role, but still with exposure to coding'
+			desc: 'Leadership role — service, department or engineering management — with room to stay hands-on technically'
 		},
-		{ lbl: 'Discipline', desc: 'Full-Stack or Frontend' },
-		{ lbl: 'Industry', desc: 'Fin tech, developer tools and custom-facing products' },
 		{
-			lbl: 'Comp',
-			desc: 'Competitive salary, but I can and will be flexible on this for the right role'
-		}
+			lbl: 'Discipline',
+			desc: 'Performance testing, IT infrastructure & operations, or technical service delivery'
+		},
+		{ lbl: 'Industry', desc: 'Software services, e-commerce, or enterprise IT' }
 	];
 
 	const values = [
-		'Values quality and good coding standards',
-		'Dedicated to developer happiness',
-		'Investing in junior developers and fostering growth',
-		'Developing customer-focused products',
-		'Appreciates the value of open source',
-		'Innovative, and an openness to trying new things'
+		'Values reliability, quality processes and engineering standards',
+		'Invests in training and developing its people',
+		'Takes budgeting discipline and cost efficiency seriously',
+		'Open to modernising tooling and approaches'
 	];
 </script>
 
 <svelte:head>
-	<title>Alicia Sykes | CV | Ideal Role</title>
+	<title>Yevhen Mionchynskyy | CV | Ideal Role</title>
 </svelte:head>
 
 <h1>What I'm looking for</h1>
@@ -81,20 +71,18 @@
 
 <h2>Why me?</h2>
 <p>
-	I'm an accomplished full-stack senior developer, just take a look at my recent
+	Take a look at my
 	<a href="/achievements">achievements</a>
-	for evidence of this! You can learn more about me, my attributes and the philosophy that drives me in
-	my
+	for what I've delivered, or my
 	<a href="/intro">intro</a>
-	page. Or if you prefer to see my past work, take a look at my published apps at
-	<a href="https://apps.aliciasykes.com">apps.aliciasykes.com</a>
+	to learn more about how I work.
 </p>
 
 <h2>Get in Touch</h2>
 <p>
-	Does this sound good to you? If so, I'd love to hear from you! So please do <a href="/contact"
-		>get in touch</a
-	>.
+	Does this sound good to you? If so, I'd love to hear from you! So please do
+	<a href="/contact">get in touch</a>
+	.
 </p>
 
 <div class="other-pages">

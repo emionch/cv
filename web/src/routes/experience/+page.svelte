@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-	<title>Alicia Sykes | CV | Experience</title>
+	<title>Yevhen Mionchynskyy | CV | Experience</title>
 </svelte:head>
 
 <h1>Experience</h1>

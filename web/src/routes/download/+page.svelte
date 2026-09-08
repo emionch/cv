@@ -9,7 +9,7 @@
 		if (browser) {
 			try {
 				// Try to download the PDF directly from the website
-				const pdfUrl = '/alicia-sykes-cv.pdf';
+				const pdfUrl = '/yevhen-mionchynskyy-cv.pdf';
 
 				// Check if the PDF exists
 				const response = await fetch(pdfUrl, { method: 'HEAD' });
@@ -18,9 +18,9 @@
 					window.location.href = pdfUrl;
 				} else {
 					// Fallback to GitHub releases
-					const repoOwner = 'Lissy93';
+					const repoOwner = 'emionch';
 					const repoName = 'cv';
-					const assetName = 'Alicia-Sykes-CV.pdf';
+					const assetName = 'Yevhen-Mionchynskyy-CV.pdf';
 
 					const releaseResponse = await fetch(
 						`https://api.github.com/repos/${repoOwner}/${repoName}/releases/latest`
@@ -63,7 +63,7 @@
 		<p>Sorry, there was an issue downloading the CV. You can try:</p>
 		<ul>
 			<li>
-				<a href="https://github.com/Lissy93/cv/releases/latest" target="_blank" rel="noopener">
+				<a href="https://github.com/emionch/cv/releases/latest" target="_blank" rel="noopener">
 					Visit the releases page directly
 				</a>
 			</li>

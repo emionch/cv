@@ -79,15 +79,15 @@ jobs:
           echo "✅ LaTeX template generated successfully"
           
           # Compile LaTeX to PDF  
-          python lib/compile.py --input tex/resume.tex --output out/Alicia-Sykes-CV.pdf
+          python lib/compile.py --input tex/resume.tex --output out/Yevhen-Mionchynskyy-CV.pdf
           echo "✅ PDF generated successfully"
-          ls -la out/Alicia-Sykes-CV.pdf
+          ls -la out/Yevhen-Mionchynskyy-CV.pdf
       
       - name: Upload CV PDF artifact
         uses: actions/upload-artifact@v4
         with:
           name: cv-pdf
-          path: out/Alicia-Sykes-CV.pdf
+          path: out/Yevhen-Mionchynskyy-CV.pdf
           retention-days: 90
 
   build-website:
@@ -164,10 +164,10 @@ jobs:
       - name: Copy PDF to website build
         run: |
           # Copy PDF with web-friendly filename if CV build succeeded
-          if [ "${{ needs.build-cv.result }}" = "success" ] && [ -f "pdf/Alicia-Sykes-CV.pdf" ]; then
-            cp "pdf/Alicia-Sykes-CV.pdf" "website/alicia-sykes-cv.pdf"
-            echo "✅ PDF copied to website build as alicia-sykes-cv.pdf"
-            ls -lh website/alicia-sykes-cv.pdf
+          if [ "${{ needs.build-cv.result }}" = "success" ] && [ -f "pdf/Yevhen-Mionchynskyy-CV.pdf" ]; then
+            cp "pdf/Yevhen-Mionchynskyy-CV.pdf" "website/yevhen-mionchynskyy-cv.pdf"
+            echo "✅ PDF copied to website build as yevhen-mionchynskyy-cv.pdf"
+            ls -lh website/yevhen-mionchynskyy-cv.pdf
           else
             echo "⚠️  CV build failed or PDF not found, deploying website without PDF"
           fi
@@ -179,8 +179,8 @@ jobs:
           external_repository: ${{ github.repository }}
           publish_branch: website
           publish_dir: ./website/
-          user_name: 'liss-bot'
-          user_email: 'alicia-gh-bot@mail.as93.net'
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
           commit_message: |
             🪁 Deploy website from ${{ github.sha }}
             

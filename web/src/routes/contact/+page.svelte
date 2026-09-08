@@ -2,24 +2,24 @@
 	let emailVisible = $state(false);
 	const revealEmail = () => {
 		emailVisible = true;
-		navigator.clipboard.writeText('hello@aliciasykes.com');
+		navigator.clipboard.writeText('emionch@gmail.com');
 	};
 </script>
 
 <svelte:head>
-	<title>Alicia Sykes | CV | Contact</title>
+	<title>Yevhen Mionchynskyy | CV | Contact</title>
 </svelte:head>
 
 <h1>Contact</h1>
 
 <p>
-	If you're looking for an accomplished full-stack Principal Engineer or Engineering Manager, then
-	I'd love to hear from you!
+	If you're looking for an experienced IT infrastructure, operations or performance testing leader,
+	then I'd love to hear from you!
 </p>
 <p>
 	You can get in touch by dropping me an email
 	{#if emailVisible}
-		<a href="mailto:hello@aliciasykes.com">hello@aliciasykes.com</a>
+		<a href="mailto:emionch@gmail.com">emionch@gmail.com</a>
 	{:else}
 		<button
 			onclick={revealEmail}
@@ -29,37 +29,32 @@
 			Reveal email address
 		</button>
 	{/if}
-	<br />
-	Or for other communication channels, see
-	<a target="_blank" href="https://aliciasykes.com/contact">aliciasykes.com/contact</a>
 </p>
 <p>Thank you for stopping by, and I really hope to hear from you!</p>
 
 <div class="some-text">
 	<p>
-		You can learn more about me on the <a href="/intro">intro</a>
+		You can learn more about me on the
+		<a href="/intro">intro</a>
 		page, or browse the
 		<a href="/skills">skills</a>
 		,
 		<a href="/experience">experience</a>
 		and
 		<a href="/achievements">achievements</a>
-		pages to see if I align with what you're looking for. A shortened version of my CV in PDF format can
-		be downloaded
+		pages to see if I align with what you're looking for. A PDF version of my CV can be downloaded
 		<a href="/download">here</a>
 		.
 	</p>
 	<p>
-		Beyond that, I'm on LinkedIn, at <a href="https://www.linkedin.com/in/aliciasykes/">
-			in/aliciasykes
-		</a>
-		and GitHub at
-		<a href="https://github.com/lissy93">@lissy93</a>
-		. A catalog of my recent open source apps can be found at
-		<a href="https://apps.aliciasykes.com">apps.aliciasykes.com</a>
+		You'll also find me on LinkedIn, at
+		<a href="https://www.linkedin.com/in/yevhenmionchynskyy/">in/yevhenmionchynskyy</a>
+		.
 	</p>
 	<p>
-		To see if I'd be a good fit for your team, you can view my <a href="/ideal-role">ideal role</a>
+		To see if I'd be a good fit for your team, you can view my
+		<a href="/ideal-role">ideal role</a>
+		.
 	</p>
 	<p>
 		If you've got any questions, or would like me to send over some references, feel free to reach
