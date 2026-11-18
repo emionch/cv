@@ -237,6 +237,9 @@ skills:
   - ITIL Processes
 
 certificates:
+- name: Claude Certified Architect – Foundations (CCA-F)
+  issuer: Anthropic
+  date: '2026'
 - name: Certified VMware Sales Professional
   issuer: VMware
 - name: VMware Certified Professional
