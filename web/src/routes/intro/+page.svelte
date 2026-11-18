@@ -33,7 +33,9 @@
 		Lviv Polytechnic National University.`,
 
 		`I hold an MSc in Applied Mathematics and Informatics from Ivan Franko National University of
-		Lviv, along with certifications from Cisco (CCNA, CCNP), VMware (VCP) and Microsoft (MCP).`,
+		Lviv. Most recently I earned the Claude Certified Architect – Foundations (CCA-F)
+		certification from Anthropic, alongside earlier certifications from Cisco (CCNA, CCNP),
+		VMware (VCP) and Microsoft (MCP).`,
 
 		`In my spare time I'm usually in my homelab — a three-node Proxmox cluster running Home
 		Assistant and TrueNAS, on a MikroTik network I've segmented into VLANs, with the occasional
