@@ -63,3 +63,6 @@ Thumbs.db
 
 # Personal source documents (LinkedIn export, old CV, photo)
 docs/
+
+# Editor settings
+.vscode/
